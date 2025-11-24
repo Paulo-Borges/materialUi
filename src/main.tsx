@@ -2,15 +2,14 @@ import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import App from "./App.tsx";
 import { BrowserRouter } from "react-router";
-import { ThemeProvider } from "@mui/material";
-import { LightTheme } from "./shared/themes/Light.ts";
+import { AppThemeProvider } from "./shared/contexts/ThemeContext.tsx";
 
 createRoot(document.getElementById("root")!).render(
-  <ThemeProvider theme={LightTheme}>
+  <AppThemeProvider>
     <BrowserRouter>
       <StrictMode>
         <App />
       </StrictMode>
     </BrowserRouter>
-  </ThemeProvider>
+  </AppThemeProvider>
 );
